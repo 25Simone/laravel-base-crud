@@ -11,10 +11,16 @@ class CreateComicsTable extends Migration
      *
      * @return void
      */
-    public function up()
-    {
+    public function up() {
         Schema::create('comics', function (Blueprint $table) {
             $table->id();
+            $table->string("title", 200);
+            $table->text("description")->nullable();
+            $table->text("thumb")->nullable();
+            $table->float("price", 4, 2);
+            $table->string("series", 200);
+            $table->date("sale_date");
+            $table->string("type", 100);
             $table->timestamps();
         });
     }
