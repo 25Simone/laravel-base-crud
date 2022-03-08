@@ -12,9 +12,10 @@ class ComicController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
+    public function index() {
+        $comicsData = Comic::all();
+
+        return view("index", compact("comicsData"));
     }
 
     /**
