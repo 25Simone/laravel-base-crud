@@ -1,33 +1,27 @@
-@extends('home')
+@extends('layout')
 
 @section('main_content')
     {{-- Title --}}
-    <h1>Comics</h1>
-    
-    {{-- Table --}}
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Title</th>
-                <th>Price</th>
-                <th>Series</th>
-                <th>Type</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($comicsData as $comic)
-            <tr>
-                <td>{{ $comic->title }}</td>
-                <td>{{ $comic->price }}</td>
-                <td>{{ $comic->series }}</td>
-                <td>{{ $comic->type }}</td>
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
+    <h1 class="title">Comics</h1>
 
-    <div>
-        <a href="{{ route('comics.create') }}" class="btn btn-primary">Aggiungi</a>
+    <div class="cards-container row p-3">
+        <!-- PRINT CARDS-->
+        @foreach($comicsData as $key => $comic) 
+            <div class="card" >
+                <!-- CARD IMG -->
+                <div class="card-image">
+                    <img class="thumb" src='{{ $comic->thumb }}' alt="card img">
+                </div>
+                <div class="card-data">
+                    <h5>{{ strtoupper($comic->series) }}</h5>
+                    <div>{{ $comic->type }}</div>
+                    <div class="price">{{ $comic->price}} €</div>
+                </div>
+            </div>
+        @endforeach
+    </div>
+
+    <div class="py-4 text-center">
+        <a href="{{ route('comics.create') }}" class="btn btn-success fs-4 fw-bold">Aggiungi</a>
     </div>
 @endsection

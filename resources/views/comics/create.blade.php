@@ -1,4 +1,4 @@
-@extends('home')
+@extends('layout')
 @section('main_content')
 <h1>Aggiungi fumetto</h1>
 

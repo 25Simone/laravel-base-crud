@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>
-    <header>
-        <h1>DC</h1>
+    <header class="py-4 text-center">
+        <h1>LA TUA FUMETTERIA DI FIDUCIA</h1>
     </header>
 
-    <main class="container">
+    <main class="container py-3">
         @yield('main_content')
     </main>
 </body>
