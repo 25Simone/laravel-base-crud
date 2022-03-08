@@ -33,9 +33,25 @@ class ComicController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(Request $request) {
+        // Save the form's data in a variable
+        $data = $request->all();
+
+        // Instance a new line
+        $newComic = new Comic();
+        $newComic->title = $data["title"];
+        $newComic->description = $data["description"];
+        $newComic->thumb = $data["thumb"];
+        $newComic->price = $data["price"];
+        $newComic->series = $data["series"];
+        $newComic->sale_date = $data["sale_date"];
+        $newComic->type = $data["type"];
+
+        // Save the line
+        $newComic->save();
+
+        // Redirect the page
+        return redirect()->route('comics.index');
     }
 
     /**

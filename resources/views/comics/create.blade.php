@@ -2,7 +2,7 @@
 @section('main_content')
 <h1>Aggiungi fumetto</h1>
 
-<form action="" method="post" class="row g-3">
+<form action="{{ route('comics.store') }}" method="post" class="row g-3">
   @csrf
 
   <div class="mb-3">
@@ -17,12 +17,12 @@
 
   <div class="mb-3">
     <label class="form-label">Anteprima</label>
-    <input type="number" class="form-control" name="Thumb">
+    <input type="text" class="form-control" name="thumb">
   </div>
 
   <div class="mb-3">
     <label class="form-label">Prezzo</label>
-    <input type="text" class="form-control" name="price">
+    <input type="number" class="form-control" name="price">
   </div>
 
   <div class="mb-3">
@@ -32,12 +32,12 @@
 
   <div class="mb-3">
     <label class="form-label">Tipo</label>
-    <input type="text" class="form-control" name="Type">
+    <input type="text" class="form-control" name="type">
   </div>
 
   <div class="mb-3">
     <label class="form-label">Data di uscita</label>
-    <input type="text" class="form-control" name="sale_date">
+    <input type="date" class="form-control" name="sale_date">
   </div>
 
 
