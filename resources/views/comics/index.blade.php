@@ -1,5 +1,7 @@
 @extends('layout')
 
+@section('title', 'comics')
+
 @section('main_content')
     {{-- Title --}}
     <h1 class="title">Comics</h1>
