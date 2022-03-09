@@ -12190,6 +12190,10 @@ header {
   border-radius: 10px;
 }
 
+a {
+  text-decoration: none;
+}
+
 .card {
   border: 2px solid transparent;
   background-color: transparent;
@@ -12219,5 +12223,9 @@ header {
 
 .card:hover {
   border: 2px solid #fff;
+}
+
+.details-page .card .card-data {
+  color: #000;
 }
 

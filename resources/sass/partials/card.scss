@@ -1,0 +1,24 @@
+.card{
+    border: 2px solid transparent;
+    background-color: transparent;
+    width: calc(100% / 6);
+    padding: 15px;
+    cursor: pointer;
+    .card-image{
+        position: relative;
+        .thumb{
+            width: 100%;
+        }
+    }
+    .card-data{
+        color: #fff;
+        margin-top: 15px;
+        h5{
+            font-size: 15px;
+            font-weight: 400;
+        }
+    }
+    &:hover{
+        border: 2px solid #fff;
+    }
+}

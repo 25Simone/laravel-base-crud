@@ -51,7 +51,7 @@ class ComicController extends Controller
         $newComic->save();
 
         // Redirect the page
-        return redirect()->route('comics.index');
+        return redirect()->route('comics.show', $newComic->id);
     }
 
     /**
@@ -60,9 +60,8 @@ class ComicController extends Controller
      * @param  \App\Comic  $comic
      * @return \Illuminate\Http\Response
      */
-    public function show(Comic $comic)
-    {
-        //
+    public function show(Comic $comic) {
+        return view('comics.show', compact("comic"));
     }
 
     /**

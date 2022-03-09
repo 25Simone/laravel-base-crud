@@ -8,18 +8,8 @@
 
     <div class="cards-container row p-3">
         <!-- PRINT CARDS-->
-        @foreach($comicsData as $key => $comic) 
-            <div class="card" >
-                <!-- CARD IMG -->
-                <div class="card-image">
-                    <img class="thumb" src='{{ $comic->thumb }}' alt="card img">
-                </div>
-                <div class="card-data">
-                    <h5>{{ strtoupper($comic->series) }}</h5>
-                    <div>{{ $comic->type }}</div>
-                    <div class="price">{{ $comic->price}} €</div>
-                </div>
-            </div>
+        @foreach($comicsData as $key => $comic)
+            @include('partials.comicCard')
         @endforeach
     </div>
 
