@@ -15,8 +15,13 @@
                 <li> <strong>Tipo:</strong> {{ $comic->type }} </li>
                 <li> <strong>Data di uscita:</strong> {{ $comic->sale_date }} </li>
             </ul>
-            <a class="btn btn-link" href="{{ route('comics.edit', $comic->id) }}">Modifica</a>
-            @include('partials.deleteButton')
+            <a class="text-decoration-none" href="{{ route('comics.edit', $comic->id) }}">
+                <button class="btn btn-warning">Modifica</button>
+            </a>
+            @include('partials.deleteButton', [
+                "route"=>"comics.destroy",
+                "id"=>$comic->id,
+            ])
         </div>
     </div>
 @endsection
