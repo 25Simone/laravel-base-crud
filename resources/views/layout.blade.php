@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>
-    <header class="py-4 text-center">
-        <h1>LA TUA FUMETTERIA DI FIDUCIA</h1>
+    <header class="text-center">
+        <h1 class="fw-bold">LA TUA FUMETTERIA DI FIDUCIA</h1>
+        @include('partials.navbar')
     </header>
 
     <main class="container py-3">

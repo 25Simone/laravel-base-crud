@@ -16,6 +16,7 @@
                 <li> <strong>Data di uscita:</strong> {{ $comic->sale_date }} </li>
             </ul>
             <a class="btn btn-link" href="{{ route('comics.edit', $comic->id) }}">Modifica</a>
+            @include('partials.deleteButton')
         </div>
     </div>
 @endsection

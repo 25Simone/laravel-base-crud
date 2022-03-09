@@ -47,7 +47,7 @@
 
   <div class="d-flex">
     <button class="btn btn-outline-secondary me-3" type="reset">Indietro</button>
-    <button class="btn btn-success" type="submit">Crea</button>
+    <button class="btn btn-success" type="submit">Salva modifiche</button>
   </div>
 </form>
 @endsection
