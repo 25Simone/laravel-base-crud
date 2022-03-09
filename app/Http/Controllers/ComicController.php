@@ -39,13 +39,9 @@ class ComicController extends Controller
 
         // Instance a new line
         $newComic = new Comic();
-        $newComic->title = $data["title"];
-        $newComic->description = $data["description"];
-        $newComic->thumb = $data["thumb"];
-        $newComic->price = $data["price"];
-        $newComic->series = $data["series"];
-        $newComic->sale_date = $data["sale_date"];
-        $newComic->type = $data["type"];
+
+        // Fills columns
+        $newComic->fill($data);
 
         // Save the line
         $newComic->save();
@@ -70,9 +66,9 @@ class ComicController extends Controller
      * @param  \App\Comic  $comic
      * @return \Illuminate\Http\Response
      */
-    public function edit(Comic $comic)
-    {
-        //
+    public function edit(Comic $comic) {
+        // Return the edit form and passes the record to be modified
+        return view('comics.edit', compact('comic'));
     }
 
     /**
@@ -82,9 +78,15 @@ class ComicController extends Controller
      * @param  \App\Comic  $comic
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Comic $comic)
-    {
-        //
+    public function update(Request $request, Comic $comic) {
+        // Save the form's data in a variable
+        $data = $request->all();
+
+        // Fills and save the data
+        $comic->update($data);
+
+        // Return the show page and passes the modified record
+        return view('comics.show', compact('comic'));
     }
 
     /**
