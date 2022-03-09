@@ -12229,3 +12229,16 @@ a {
   color: #000;
 }
 
+nav li {
+  border-bottom: 2px solid transparent;
+}
+
+nav li:hover {
+  border-bottom: 2px solid #fff;
+}
+
+nav li.active {
+  border-bottom: 2px solid #fff;
+  color: #fff;
+}
+
