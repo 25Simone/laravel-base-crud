@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title')</title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    {{-- <script src="{{ asset('js/app.js') }}"></script> --}}
 </head>
 <body>
     <header class="text-center">
@@ -16,5 +17,6 @@
     <main class="container py-3">
         @yield('main_content')
     </main>
+
 </body>
 </html>
